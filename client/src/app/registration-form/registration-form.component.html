@@ -1,0 +1,12 @@
+<h2>Registration Form</h2>
+<form [formGroup]="registrationForm">
+  Enter FirstName :<input type="text" formControlName="firstname"><br>
+  Enter LasttName :<input type="text" formControlName="lastname"><br>
+  Enter MobileNo. :<input type="text" formControlName="mobileno"><br>
+  Enter Username :<input type="text" formControlName="username"><br>
+  Enter Password :<input type="password" formControlName="password"><br>
+  Enter Transaction Id :<input type="password" formControlName="transactionId"><br>
+  <button (click)="register()" [disabled]="!registrationForm.valid">Register</button>
+</form>
+<br>
+<h3>Already have an account?</h3><a href="#" [routerLink]="['/login']">Login here..</a>

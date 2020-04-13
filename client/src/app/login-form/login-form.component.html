@@ -1,0 +1,8 @@
+<h2>Login Form</h2>
+<form [formGroup]="loginForm">
+  Enter Username :<input type="text" formControlName="username"><br>
+  Enter Password :<input type="password" formControlName="password"><br>
+  <button (click)="login()" [disabled]="!loginForm.valid">Login</button>
+</form>
+<br>
+<h3>Don't have an account?</h3><a href="#" [routerLink]="['/registration']">Register here..</a>
