@@ -47,7 +47,3 @@ exports.user_login = async (req, res, next) => {
     });
   }  
 };
-
-exports.user_delete = (req, res, next) => {
-  res.status(200).json({ msg: "user_delete works" })
-};

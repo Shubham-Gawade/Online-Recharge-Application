@@ -10,4 +10,4 @@ const userSchema = mongoose.Schema({
     transactionId: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Accounts', userSchema);
+module.exports = mongoose.model('accounts', userSchema);

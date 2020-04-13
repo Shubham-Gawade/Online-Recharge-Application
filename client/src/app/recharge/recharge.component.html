@@ -1,0 +1,14 @@
+<h2>Recharge Here</h2>
+<br>
+<br>
+
+<div>
+  <h3>
+  <label>Select a service provider: </label>
+  <select>
+      <option *ngFor="let item of companyNameList" value={{item.companyname}}>
+        {{item.companyname}}
+      </option>
+  </select>
+  </h3>
+</div>
