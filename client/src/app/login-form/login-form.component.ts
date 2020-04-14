@@ -33,7 +33,8 @@ export class LoginFormComponent implements OnInit {
 
       this.authServive.login(data).subscribe((response: any) => {
         alert(response.msg);
-        this.router.navigate(['/dashboard']);
+        const username = data.username;
+        this.router.navigate(['/dashboard', username]);
         }, (error) => {
         console.log(error);
         alert(error.error.msg);

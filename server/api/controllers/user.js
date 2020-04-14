@@ -48,3 +48,21 @@ exports.user_login = async (req, res, next) => {
     });
   }  
 };
+
+
+exports.user_get_details = async (req, res, next) => {
+  
+  const userdetail = await User.findOne({username: req.body.username });
+
+  if(!userdetail) {
+    return res.status(404).json({
+      msg : "UserDetails Not retrived"
+    });
+  }
+  else {
+    return res.status(201).json({
+      msg : "UserDetails retrived",
+      userdetail: userdetail
+    });
+  }  
+};

@@ -10,6 +10,7 @@ export class RechargeComponent implements OnInit {
 
   companyNameList = [];
   companyDataPack = [];
+  selected: string;
 
   constructor(
     private companyServive: CompanyService
@@ -18,6 +19,7 @@ export class RechargeComponent implements OnInit {
   ngOnInit() {
     this.companyServive.getCompanyName().subscribe((response: any) => {
       this.companyNameList = response.companyNames;
+      this.selected = 'false';
       }, (error) => {
       console.log(error);
       alert(error.error.msg);
@@ -32,7 +34,7 @@ export class RechargeComponent implements OnInit {
 
     this.companyServive.getCompanyDataPack(data).subscribe((response: any) => {
       this.companyDataPack = response.DataPack;
-      console.log(this.companyDataPack);
+      this.selected = 'true';
       }, (error) => {
       console.log(error);
       alert(error.error.msg);

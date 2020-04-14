@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent},
   { path: 'login', component: LoginFormComponent},
   { path: 'registration', component: RegistrationFormComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard/:username', component: DashboardComponent},
   { path: 'recharge', component: RechargeComponent}
 ];
 
