@@ -19,6 +19,7 @@ exports.user_signup = async (req, res, next) => {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     mobileno: req.body.mobileno,
+    Balance: "2000",
     username: req.body.username,
     password: req.body.password,
     transactionId: req.body.transactionId,

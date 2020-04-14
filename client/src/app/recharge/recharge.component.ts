@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../authentication.service';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-recharge',
@@ -9,14 +9,30 @@ import { AuthenticationService } from '../authentication.service';
 export class RechargeComponent implements OnInit {
 
   companyNameList = [];
+  companyDataPack = [];
 
   constructor(
-    private authServive: AuthenticationService
+    private companyServive: CompanyService
   ) { }
 
   ngOnInit() {
-    this.authServive.getCompanyName().subscribe((response: any) => {
+    this.companyServive.getCompanyName().subscribe((response: any) => {
       this.companyNameList = response.companyNames;
+      }, (error) => {
+      console.log(error);
+      alert(error.error.msg);
+    });
+  }
+
+  dataPackDisplay(name) {
+
+    const data = {
+      companyname : name
+    };
+
+    this.companyServive.getCompanyDataPack(data).subscribe((response: any) => {
+      this.companyDataPack = response.DataPack;
+      console.log(this.companyDataPack);
       }, (error) => {
       console.log(error);
       alert(error.error.msg);

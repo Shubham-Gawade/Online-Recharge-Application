@@ -6,8 +6,9 @@ const mongoose = require("mongoose");
 
 const userRoutes = require('./api/routes/user');
 const companyRoutes = require('./api/routes/company');
+const companyDataPack = require('./api/routes/dataPlan');
 
-mongoose.connect("mongodb+srv://shubhamg_7292:"+process.env.MONGO_ATLAS_PW+"@cluster0-cr1db.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://shubhamg_7292:"+process.env.MONGO_ATLAS_PW+"@cluster0-cr1db.mongodb.net/Recharge?retryWrites=true&w=majority", { useNewUrlParser: true });
 // to generate link watch video given in below link
 // https://youtu.be/WDrU305J1yw
 console.log('https://youtu.be/WDrU305J1yw');
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use("/user", userRoutes);
 app.use("/company", companyRoutes);
+app.use("/dataPackinfo", companyDataPack);
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

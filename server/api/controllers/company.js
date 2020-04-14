@@ -7,6 +7,7 @@ const Company = require("../models/company");
 exports.get_company_name = async (req, res, next) => {
 
   const companyNames = await Company.find({ });
+
   if(!companyNames) {
     return res.status(404).json({
       msg : "List Not Retrived"

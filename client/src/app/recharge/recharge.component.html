@@ -4,11 +4,26 @@
 
 <div>
   <h3>
-  <label>Select a service provider: </label>
-  <select>
-      <option *ngFor="let item of companyNameList" value={{item.companyname}}>
-        {{item.companyname}}
-      </option>
-  </select>
+    <label>Select a service provider: </label>
+    <select #selctedCategory>
+      <option value="">--Please choose an option--</option>
+      <option *ngFor="let item of companyNameList" [value]="item.companyname"> {{item.companyname}}</option>
+      </select>
+    <br>
+    <button (click)="dataPackDisplay(selctedCategory.value)">Submit</button>
   </h3>
 </div>
+
+<br><br>
+
+<div>
+  <h3>
+    <label>Select a DataPack Plan: </label>
+    <select>
+      <option value="">-- Please choose an option --</option>
+      <option *ngFor="let item of companyDataPack" value={{item.packinfo}}> {{item.packinfo}}</option>
+    </select>
+    <br>
+  </h3>
+</div>
+
