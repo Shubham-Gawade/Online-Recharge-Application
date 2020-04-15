@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent},
   { path: 'registration', component: RegistrationFormComponent},
   { path: 'dashboard/:username', component: DashboardComponent},
-  { path: 'recharge', component: RechargeComponent}
+  { path: 'recharge/:this.username', component: RechargeComponent}
 ];
 
 @NgModule({

@@ -27,7 +27,7 @@ export class RegistrationFormComponent implements OnInit {
       mobileno: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
-      transactionId: ['', Validators.required]
+      transactionpassword: ['', Validators.required]
     });
   }
 
@@ -38,9 +38,8 @@ export class RegistrationFormComponent implements OnInit {
       mobileno: this.registrationForm.get('mobileno').value,
       username: this.registrationForm.get('username').value,
       password: this.registrationForm.get('password').value,
-      transactionId: this.registrationForm.get('transactionId').value,
+      transactionpassword: this.registrationForm.get('transactionpassword').value,
     };
-    console.log('data', data);
 
     this.authServive.register(data).subscribe((response: any) => {
         alert(response.msg);

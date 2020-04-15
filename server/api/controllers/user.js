@@ -19,10 +19,10 @@ exports.user_signup = async (req, res, next) => {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     mobileno: req.body.mobileno,
-    Balance: "2000",
+    balance: "2000",
     username: req.body.username,
     password: req.body.password,
-    transactionId: req.body.transactionId,
+    transactionpassword: req.body.transactionpassword,
   });
 
   user.save().then((response) =>{
@@ -65,4 +65,61 @@ exports.user_get_details = async (req, res, next) => {
       userdetail: userdetail
     });
   }  
+};
+
+exports.user_findbal = async (req, res, next) => {
+
+  console.log("req.body",req.body);
+
+  const user = await User.findOne({username: req.body.username });
+  console.log("user",user)
+  if(!user) {
+    return res.status(404).json({
+      msg : "Balance found Failed"
+    });
+  }
+  else{
+    return res.status(201).json({
+      msg : "Balance found Successful",
+      bal: user.balance
+    });
+  }
+    
+};
+
+exports.user_update = async (req, res, next) => {
+  console.log(req.body._id);
+      const student = await User.update({username: req.body.username},{balance:req.body.balance});
+      
+    
+      if(!student) {
+        return res.status(404).json({
+          msg : "update Failed"
+        });
+      }
+      else{
+        return res.status(201).json({
+          msg : "Balance update Successful",
+        });
+      }
+    
+};
+
+exports.user_checktransactionpass = async (req, res, next) => {
+
+  console.log("req.bodytran",req.body);
+
+  const user = await User.findOne({username: req.body.username ,transactionpassword: req.body.tranpass });
+
+  if(!user) {
+    return res.status(404).json({
+      msg : "Incorrect Transaction password"
+    });
+  }
+  else{
+    return res.status(201).json({
+      msg : "password check succes"
+    });
+  }
+    
 };

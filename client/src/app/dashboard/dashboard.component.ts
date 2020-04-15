@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     const name = this.route.snapshot.paramMap.get('username');
+    this.username = name;
 
     const data = {
       username : name
@@ -34,6 +35,6 @@ export class DashboardComponent implements OnInit {
   }
 
   Recharge() {
-    this.router.navigate(['/recharge']);
+    this.router.navigate(['/recharge', this.username]);
   }
 }
