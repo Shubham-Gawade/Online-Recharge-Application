@@ -5,6 +5,6 @@ const companyController = require('../controllers/transaction');
 
 router.post("/recharge", companyController.company_recharge);
 
-router.post("/showtransaction", companyController.company_showtransaction);
+router.post("/transactionDetails", companyController.company_showtransaction);
 
 module.exports = router;

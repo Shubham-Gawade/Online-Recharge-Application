@@ -1,0 +1,29 @@
+<h2 style="text-align: center;">Transaction List</h2><br>
+<div id="heading">
+<table border="2">
+  <tr>
+    <th>Username</th>
+    <th>Mobile no</th>
+    <th>Company name</th>
+    <th>Amount</th>
+    <th>Transaction Date</th>
+  </tr>
+</table>
+</div>
+<div *ngFor="let item of transactionDetails">
+  <table border="2">
+  <tr>
+    <td>{{item.username}}</td>
+    <td>{{item.mobileno}}</td>
+    <td>{{item.company}}</td>
+    <td>{{item.amount}}</td>
+    <td>{{item.transactionDate}}</td>
+  </tr>
+</table>
+</div>
+
+<br>
+<div style="text-align: center;">
+<button (click)="back()">Back</button>
+</div>
+<br>

@@ -11,7 +11,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  public username ='';
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -30,11 +30,11 @@ export class LoginFormComponent implements OnInit {
       username: this.loginForm.get('username').value,
       password: this.loginForm.get('password').value
       };
+      this.username = data.username;
 
       this.authServive.login(data).subscribe((response: any) => {
         alert(response.msg);
-        const username = data.username;
-        this.router.navigate(['/dashboard', username]);
+        this.router.navigate(['/dashboard', this.username]);
         }, (error) => {
         console.log(error);
         alert(error.error.msg);

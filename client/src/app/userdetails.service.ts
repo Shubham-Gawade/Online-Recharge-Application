@@ -32,4 +32,8 @@ export class UserdetailsService {
   updateUserData(data1) {
     return this.http.put(this.userDetailsApi + `/updateUserData`, data1);
   }
+
+  getTransactionDetails(data) {
+    return this.http.post(this.tranApi + '/transactionDetails', data);
+  }
 }

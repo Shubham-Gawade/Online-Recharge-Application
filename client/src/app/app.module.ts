@@ -10,6 +10,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RechargeComponent } from './recharge/recharge.component';
+import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RechargeComponent } from './recharge/recharge.component';
     HomepageComponent,
     DashboardComponent,
     RechargeComponent,
+    TransactionDetailsComponent,
   ],
   imports: [
     BrowserModule,
