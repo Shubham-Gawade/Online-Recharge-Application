@@ -13,6 +13,7 @@ import { UserdetailsService } from '../userdetails.service';
 export class RechargeComponent implements OnInit {
 
   username = '';
+  companyname = '';
   rechargeForm: FormGroup;
   companyNameList = [];
   companyDataPack = [];
@@ -50,6 +51,7 @@ export class RechargeComponent implements OnInit {
 
   dataPackDisplay(name) {
 
+    this.companyname = name;
     const data = {
       companyname : name
     };
@@ -68,7 +70,7 @@ export class RechargeComponent implements OnInit {
     const data = {
       username: this.username,
       mobileno: this.rechargeForm.get('mobileno').value,
-      company: this.rechargeForm.get('company').value,
+      company: this.companyname,
       amount: this.rechargeForm.get('amount').value,
       tranpass: this.rechargeForm.get('password').value
     };
